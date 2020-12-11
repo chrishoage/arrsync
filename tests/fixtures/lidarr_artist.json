@@ -1,0 +1,413 @@
+[
+  {
+    "status": "ended",
+    "ended": true,
+    "lastInfoSync": "2020-12-05T23:33:59.805989Z",
+    "artistName": "Harvey Danger",
+    "foreignArtistId": "822cb123-f728-4a1a-931c-fa27257bb83f",
+    "tadbId": 0,
+    "discogsId": 0,
+    "overview": "Harvey Danger was an American alternative rock band that was formed in Seattle, Washington, in 1993 by journalism students at the University of Washington. The band rose to prominence in 1997 with the single \"Flagpole Sitta\", which was later used as the theme tune to the British sitcom Peep Show. On August 29, 2009, the band played its final show at the Crocodile Cafe in Seattle.",
+    "artistType": "Group",
+    "disambiguation": "",
+    "links": [
+      {
+        "url": "http://www.harveydanger.com/",
+        "name": "harveydanger"
+      },
+      {
+        "url": "https://www.discogs.com/artist/501236",
+        "name": "discogs"
+      },
+      {
+        "url": "http://decoda.com/harvey-danger-lyrics",
+        "name": "decoda"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q3128028",
+        "name": "wikidata"
+      },
+      {
+        "url": "https://secondhandsongs.com/artist/33187",
+        "name": "secondhandsongs"
+      },
+      {
+        "url": "https://www.allmusic.com/artist/mn0000951589",
+        "name": "allmusic"
+      },
+      {
+        "url": "http://rateyourmusic.com/artist/harvey_danger",
+        "name": "rateyourmusic"
+      },
+      {
+        "url": "https://open.spotify.com/artist/7fu6ebyL3JGXJgo5zsOo4k",
+        "name": "spotify"
+      }
+    ],
+    "lastAlbum": {
+      "artistMetadataId": 1,
+      "foreignAlbumId": "481d6fc5-a022-3188-b529-297aaf2b14fe",
+      "oldForeignAlbumIds": [
+        "5bf690ed-3a9e-3b76-a1d7-a6937970fafd",
+        "7b65b6bc-f6b3-31c4-93e4-6674c29c9063"
+      ],
+      "title": "Little by Little…",
+      "overview": "Little by Little... is the third and final full-length album by Harvey Danger. It was the band's first and only record without drummer Evan Sult.",
+      "disambiguation": "",
+      "releaseDate": "2005-09-13T00:00:00Z",
+      "images": [
+        {
+          "url": "https://coverartarchive.org/release/9497dc23-012f-4051-b23c-b221a7c78bb5/6332182139.jpg",
+          "coverType": "cover",
+          "extension": ".jpg"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://www.wikidata.org/wiki/Q6652669",
+          "name": "wikidata"
+        },
+        {
+          "url": "https://www.discogs.com/master/258745",
+          "name": "discogs"
+        },
+        {
+          "url": "https://www.allmusic.com/album/mw0000733225",
+          "name": "allmusic"
+        },
+        {
+          "url": "https://rateyourmusic.com/release/album/harvey_danger/little_by_little___/",
+          "name": "rateyourmusic"
+        }
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "albumType": "Album",
+      "secondaryTypes": [],
+      "ratings": {
+        "votes": 1,
+        "value": 8.0
+      },
+      "cleanTitle": "littlebylittle",
+      "profileId": 2,
+      "monitored": true,
+      "anyReleaseOk": true,
+      "lastInfoSync": "2020-12-05T23:34:04.979711Z",
+      "added": "2020-12-05T23:33:59.809562Z",
+      "artistMetadata": {
+        "isLoaded": false
+      },
+      "albumReleases": {
+        "isLoaded": false
+      },
+      "artist": {
+        "isLoaded": false
+      },
+      "artistId": 1,
+      "id": 3
+    },
+    "images": [
+      {
+        "url": "/MediaCover/1/fanart.jpg?lastWrite=634753476840000000",
+        "coverType": "fanart",
+        "extension": ".jpg"
+      },
+      {
+        "url": "/MediaCover/1/poster.jpg?lastWrite=634753472860000000",
+        "coverType": "poster",
+        "extension": ".jpg"
+      }
+    ],
+    "path": "/data/music/Harvey Danger",
+    "qualityProfileId": 2,
+    "metadataProfileId": 1,
+    "albumFolder": true,
+    "monitored": true,
+    "genres": [
+      "Alternative Rock",
+      "Indie Rock",
+      "Rock"
+    ],
+    "cleanName": "harveydanger",
+    "sortName": "harvey danger",
+    "tags": [
+      1
+    ],
+    "added": "2020-12-05T23:33:59.727248Z",
+    "ratings": {
+      "votes": 1,
+      "value": 8.0
+    },
+    "statistics": {
+      "albumCount": 3,
+      "trackFileCount": 0,
+      "trackCount": 50,
+      "totalTrackCount": 50,
+      "sizeOnDisk": 0,
+      "percentOfTracks": 0.0
+    },
+    "id": 1
+  },
+  {
+    "status": "continuing",
+    "ended": false,
+    "lastInfoSync": "2020-12-06T00:11:19.02746Z",
+    "artistName": "The Long Winters",
+    "foreignArtistId": "966bd819-2ba1-4e1b-9d35-72385937e8ed",
+    "tadbId": 0,
+    "discogsId": 0,
+    "overview": "The Long Winters are an American indie rock band based in Seattle, Washington.",
+    "artistType": "Group",
+    "disambiguation": "",
+    "links": [
+      {
+        "url": "http://www.thelongwinters.com/",
+        "name": "thelongwinters"
+      },
+      {
+        "url": "https://www.discogs.com/artist/288571",
+        "name": "discogs"
+      },
+      {
+        "url": "http://decoda.com/the-long-winters-lyrics",
+        "name": "decoda"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q7748297",
+        "name": "wikidata"
+      },
+      {
+        "url": "http://muzikum.eu/en/122-10261/the-long-winters/lyrics.html",
+        "name": "muzikum"
+      },
+      {
+        "url": "https://rateyourmusic.com/artist/the_long_winters",
+        "name": "rateyourmusic"
+      },
+      {
+        "url": "https://www.allmusic.com/artist/mn0000099770",
+        "name": "allmusic"
+      }
+    ],
+    "lastAlbum": {
+      "artistMetadataId": 2,
+      "foreignAlbumId": "44bc98a8-dbd2-3668-b139-fab0703eab14",
+      "oldForeignAlbumIds": [
+        "f09be3c3-9262-3f06-a4ad-27c7fcacfbb7"
+      ],
+      "title": "Putting the Days to Bed",
+      "overview": "Putting the Days to Bed is the third full-length studio album by indie rock band the Long Winters. It was released in the US by Barsuk Records and distributed in Europe by Munich Records in 2006. The album title is a lyric from the album track \"Hindsight\".",
+      "disambiguation": "",
+      "releaseDate": "2006-07-25T00:00:00Z",
+      "images": [
+        {
+          "url": "https://coverartarchive.org/release/e1f75d97-4bb0-40ae-a16d-da168a7e45da/12383142996.jpg",
+          "coverType": "cover",
+          "extension": ".jpg"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Putting_the_Days_to_Bed",
+          "name": "wikipedia"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q7262493",
+          "name": "wikidata"
+        }
+      ],
+      "genres": [
+        "Alternative Rock",
+        "Indie Rock"
+      ],
+      "albumType": "Album",
+      "secondaryTypes": [],
+      "ratings": {
+        "votes": 0,
+        "value": 0.0
+      },
+      "cleanTitle": "puttingdaystobed",
+      "profileId": 2,
+      "monitored": true,
+      "anyReleaseOk": true,
+      "lastInfoSync": "2020-12-06T00:11:24.652687Z",
+      "added": "2020-12-06T00:11:19.02777Z",
+      "artistMetadata": {
+        "isLoaded": false
+      },
+      "albumReleases": {
+        "isLoaded": false
+      },
+      "artist": {
+        "isLoaded": false
+      },
+      "artistId": 2,
+      "id": 6
+    },
+    "images": [],
+    "path": "/data/music/The Long Winters",
+    "qualityProfileId": 2,
+    "metadataProfileId": 1,
+    "albumFolder": true,
+    "monitored": true,
+    "genres": [],
+    "cleanName": "thelongwinters",
+    "sortName": "long winters",
+    "tags": [],
+    "added": "2020-12-06T00:11:18.987023Z",
+    "ratings": {
+      "votes": 0,
+      "value": 0.0
+    },
+    "statistics": {
+      "albumCount": 3,
+      "trackFileCount": 0,
+      "trackCount": 37,
+      "totalTrackCount": 37,
+      "sizeOnDisk": 0,
+      "percentOfTracks": 0.0
+    },
+    "id": 2
+  },
+  {
+    "status": "continuing",
+    "ended": false,
+    "lastInfoSync": "2020-12-06T00:19:41.673571Z",
+    "artistName": "GRiZ",
+    "foreignArtistId": "c62327d3-df81-46ce-bd94-5bd3040f8699",
+    "tadbId": 0,
+    "discogsId": 0,
+    "overview": "Grant Richard Kwiecinski, also known by his stage name GRiZ, is an American DJ, songwriter, and electronic producer from Southfield Michigan. He is known for playing the saxophone along with producing funk, electro-soul, and self-described future-funk.",
+    "artistType": "Person",
+    "disambiguation": "dubstep/hip-hop artist",
+    "links": [
+      {
+        "url": "https://www.discogs.com/artist/2905200",
+        "name": "discogs"
+      },
+      {
+        "url": "https://www.facebook.com/therealGRiZ",
+        "name": "facebook"
+      },
+      {
+        "url": "http://www.mynameisgriz.com/",
+        "name": "mynameisgriz"
+      },
+      {
+        "url": "https://soundcloud.com/griz/",
+        "name": "soundcloud"
+      },
+      {
+        "url": "https://twitter.com/mynameisGRiZ",
+        "name": "twitter"
+      },
+      {
+        "url": "https://www.last.fm/music/Griz",
+        "name": "last"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q18763607",
+        "name": "wikidata"
+      },
+      {
+        "url": "https://itunes.apple.com/us/artist/id980722716",
+        "name": "apple"
+      },
+      {
+        "url": "http://viaf.org/viaf/78571378",
+        "name": "viaf"
+      },
+      {
+        "url": "https://www.instagram.com/griz/",
+        "name": "instagram"
+      },
+      {
+        "url": "https://www.songkick.com/artists/168568",
+        "name": "songkick"
+      },
+      {
+        "url": "https://www.deezer.com/artist/1346247",
+        "name": "deezer"
+      },
+      {
+        "url": "https://open.spotify.com/artist/25oLRSUjJk4YHNUsQXk7Ut",
+        "name": "spotify"
+      }
+    ],
+    "lastAlbum": {
+      "artistMetadataId": 3,
+      "foreignAlbumId": "9a6514ef-55d5-416e-b242-fe1275efe2a1",
+      "oldForeignAlbumIds": [],
+      "title": "Ride Waves",
+      "disambiguation": "",
+      "releaseDate": "2019-04-05T00:00:00Z",
+      "images": [
+        {
+          "url": "https://coverartarchive.org/release/5e919af2-7884-4e83-8a76-ac16ef4d2d05/26096202270.jpg",
+          "coverType": "cover",
+          "extension": ".jpg"
+        }
+      ],
+      "links": [],
+      "genres": [],
+      "albumType": "Album",
+      "secondaryTypes": [],
+      "ratings": {
+        "votes": 1,
+        "value": 8.0
+      },
+      "cleanTitle": "ridewaves",
+      "profileId": 2,
+      "monitored": false,
+      "anyReleaseOk": true,
+      "lastInfoSync": "2020-12-06T00:19:51.799098Z",
+      "added": "2020-12-06T00:19:41.673884Z",
+      "artistMetadata": {
+        "isLoaded": false
+      },
+      "albumReleases": {
+        "isLoaded": false
+      },
+      "artist": {
+        "isLoaded": false
+      },
+      "artistId": 3,
+      "id": 12
+    },
+    "images": [
+      {
+        "url": "/MediaCover/3/poster.jpg?lastWrite=635132063440000000",
+        "coverType": "poster",
+        "extension": ".jpg"
+      }
+    ],
+    "path": "/data/music/GRiZ",
+    "qualityProfileId": 2,
+    "metadataProfileId": 1,
+    "albumFolder": true,
+    "monitored": true,
+    "genres": [
+      "Electronic",
+      "Funk",
+      "Trip Hop"
+    ],
+    "cleanName": "griz",
+    "sortName": "griz",
+    "tags": [],
+    "added": "2020-12-06T00:19:41.613121Z",
+    "ratings": {
+      "votes": 1,
+      "value": 10.0
+    },
+    "statistics": {
+      "albumCount": 6,
+      "trackFileCount": 0,
+      "trackCount": 0,
+      "totalTrackCount": 72,
+      "sizeOnDisk": 0,
+      "percentOfTracks": 0.0
+    },
+    "id": 3
+  }
+]

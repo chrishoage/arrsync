@@ -1,0 +1,24 @@
+{
+  "python.formatting.provider": "black",
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "basic",
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "python.linting.mypyEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "cSpell.ignoreWords": [
+    "imdb",
+    "noqa",
+    "optionxform",
+    "pydantic",
+    "pytest",
+    "rsps",
+    "tmdb",
+    "tvdb"
+  ],
+}

@@ -1,0 +1,12 @@
+black
+isort
+flake8
+flake8-black
+flake8-isort
+pep8-naming
+mypy
+pytest
+pytest-mock
+pytest-cov
+mock
+responses

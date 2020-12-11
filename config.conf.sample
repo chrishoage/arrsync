@@ -1,0 +1,32 @@
+[radarr-remote-to-local]
+type=radarr
+source_url = http://localhost:7878/
+source_key = aaa
+dest_url = http://localhost:7879/radarr
+dest_key = bbb
+dest_path = /movies
+source_include_missing = 1
+
+[sonarr-remote-to-local]
+type=sonarr
+source_url = http://localhost:8989
+source_key = aaa
+dest_url = http://localhost:8980/sonarr
+dest_key = bb
+dest_path = /tv
+
+[lidarr-remote-to-local]
+type=lidarr
+source_url = http://localhost:8686/
+source_key = aaa
+dest_url = http://localhost:8687/lidarr
+dest_key = bbb
+dest_path = /music
+
+
+# Shared settings between all sync jobs
+[common]
+dest_search_missing = 0
+dest_monitor = 1
+source_tag_exclude = no-sync
+dest_profile = Any

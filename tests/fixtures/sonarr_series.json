@@ -1,0 +1,528 @@
+[
+  {
+    "title": "Breaking Bad",
+    "alternateTitles": [],
+    "sortTitle": "breaking bad",
+    "status": "ended",
+    "ended": true,
+    "overview": "When Walter White, a chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of two years left to live, he chooses to enter a dangerous world of drugs and crime with the intent to secure his family's financial security.",
+    "previousAiring": "2013-09-30T01:00:00Z",
+    "network": "Netflix",
+    "airTime": "21:00",
+    "images": [
+      {
+        "coverType": "banner",
+        "url": "/MediaCover/1/banner.jpg?lastWrite=637428078259927850",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/graphical/81189-g21.jpg"
+      },
+      {
+        "coverType": "poster",
+        "url": "/MediaCover/1/poster.jpg?lastWrite=637428078261427850",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/posters/81189-10.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCover/1/fanart.jpg?lastWrite=637428078263027850",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/fanart/original/81189-21.jpg"
+      }
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 0,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 19,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 1,
+        "monitored": true,
+        "statistics": {
+          "previousAiring": "2008-03-10T01:00:00Z",
+          "episodeFileCount": 0,
+          "episodeCount": 7,
+          "totalEpisodeCount": 7,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 2,
+        "monitored": true,
+        "statistics": {
+          "previousAiring": "2009-06-01T01:00:00Z",
+          "episodeFileCount": 0,
+          "episodeCount": 13,
+          "totalEpisodeCount": 13,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 3,
+        "monitored": true,
+        "statistics": {
+          "previousAiring": "2010-06-14T01:00:00Z",
+          "episodeFileCount": 0,
+          "episodeCount": 13,
+          "totalEpisodeCount": 13,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 4,
+        "monitored": true,
+        "statistics": {
+          "previousAiring": "2011-10-10T01:00:00Z",
+          "episodeFileCount": 0,
+          "episodeCount": 13,
+          "totalEpisodeCount": 13,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 5,
+        "monitored": true,
+        "statistics": {
+          "previousAiring": "2013-09-30T01:00:00Z",
+          "episodeFileCount": 0,
+          "episodeCount": 16,
+          "totalEpisodeCount": 16,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      }
+    ],
+    "year": 2008,
+    "path": "/data/tv/Breaking Bad",
+    "qualityProfileId": 4,
+    "languageProfileId": 1,
+    "seasonFolder": true,
+    "monitored": true,
+    "useSceneNumbering": false,
+    "runtime": 47,
+    "tvdbId": 81189,
+    "tvRageId": 18164,
+    "tvMazeId": 169,
+    "firstAired": "2008-01-20T00:00:00Z",
+    "seriesType": "standard",
+    "cleanTitle": "breakingbad",
+    "imdbId": "tt0903747",
+    "titleSlug": "breaking-bad",
+    "rootFolderPath": "/data/tv/",
+    "certification": "TV-MA",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Suspense",
+      "Thriller"
+    ],
+    "tags": [],
+    "added": "2020-12-05T23:30:24.954424Z",
+    "ratings": {
+      "votes": 31714,
+      "value": 9.4
+    },
+    "statistics": {
+      "seasonCount": 5,
+      "episodeFileCount": 0,
+      "episodeCount": 62,
+      "totalEpisodeCount": 81,
+      "sizeOnDisk": 0,
+      "percentOfEpisodes": 0.0
+    },
+    "id": 1
+  },
+  {
+    "title": "House",
+    "alternateTitles": [],
+    "sortTitle": "house",
+    "status": "ended",
+    "ended": true,
+    "overview": "Dr. Gregory House is a maverick physician who is devoid of bedside manner. While his behavior can border on antisocial, Dr. House thrives on the challenge of solving the medical puzzles that other doctors give up on. Together with his hand-picked team of young medical experts, he'll do whatever it takes in the race against the clock to solve the case.",
+    "previousAiring": "2005-05-25T01:00:00Z",
+    "network": "FOX",
+    "airTime": "21:00",
+    "images": [
+      {
+        "coverType": "banner",
+        "url": "/MediaCover/2/banner.jpg?lastWrite=637428079654052550",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/graphical/73255-g7.jpg"
+      },
+      {
+        "coverType": "poster",
+        "url": "/MediaCover/2/poster.jpg?lastWrite=637428079655252550",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/series/73255/posters/230801.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCover/2/fanart.jpg?lastWrite=637428079656919200",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/fanart/original/73255-11.jpg"
+      }
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 0,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 5,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 1,
+        "monitored": true,
+        "statistics": {
+          "previousAiring": "2005-05-25T01:00:00Z",
+          "episodeFileCount": 0,
+          "episodeCount": 22,
+          "totalEpisodeCount": 22,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 2,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 24,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 3,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 24,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 4,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 16,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 5,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 24,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 6,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 21,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 7,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 23,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 8,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 22,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      }
+    ],
+    "year": 2004,
+    "path": "/data/tv/House",
+    "qualityProfileId": 5,
+    "languageProfileId": 1,
+    "seasonFolder": true,
+    "monitored": true,
+    "useSceneNumbering": false,
+    "runtime": 45,
+    "tvdbId": 73255,
+    "tvRageId": 3908,
+    "tvMazeId": 118,
+    "firstAired": "2004-11-16T00:00:00Z",
+    "seriesType": "standard",
+    "cleanTitle": "house",
+    "imdbId": "tt0412142",
+    "titleSlug": "house",
+    "rootFolderPath": "/data/tv/",
+    "certification": "TV-14",
+    "genres": [
+      "Drama",
+      "Suspense"
+    ],
+    "tags": [],
+    "added": "2020-12-05T23:32:44.239971Z",
+    "ratings": {
+      "votes": 34962,
+      "value": 9.1
+    },
+    "statistics": {
+      "seasonCount": 8,
+      "episodeFileCount": 0,
+      "episodeCount": 22,
+      "totalEpisodeCount": 181,
+      "sizeOnDisk": 0,
+      "percentOfEpisodes": 0.0
+    },
+    "id": 2
+  },
+  {
+    "title": "DARK",
+    "alternateTitles": [],
+    "sortTitle": "dark",
+    "status": "ended",
+    "ended": true,
+    "overview": "When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids. The mystery-drama series introduces an intricate puzzle filled with twists that includes a web of curious characters, all of whom have a connection to the town's troubled history -- whether they know it or not. The story includes supernatural elements that tie back to the same town in 1986.",
+    "previousAiring": "2020-06-27T04:00:00Z",
+    "network": "Netflix",
+    "images": [
+      {
+        "coverType": "banner",
+        "url": "/MediaCover/3/banner.jpg?lastWrite=637428094542369850",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/graphical/5d0d7406d7e0e.jpg"
+      },
+      {
+        "coverType": "poster",
+        "url": "/MediaCover/3/poster.jpg?lastWrite=637428094543769850",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/posters/334824-1.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCover/3/fanart.jpg?lastWrite=637428094545903180",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/fanart/original/334824-7.jpg"
+      }
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "monitored": true,
+        "statistics": {
+          "previousAiring": "2017-12-01T05:00:00Z",
+          "episodeFileCount": 0,
+          "episodeCount": 10,
+          "totalEpisodeCount": 10,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 2,
+        "monitored": true,
+        "statistics": {
+          "previousAiring": "2019-06-21T04:00:00Z",
+          "episodeFileCount": 0,
+          "episodeCount": 8,
+          "totalEpisodeCount": 8,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 3,
+        "monitored": true,
+        "statistics": {
+          "previousAiring": "2020-06-27T04:00:00Z",
+          "episodeFileCount": 0,
+          "episodeCount": 8,
+          "totalEpisodeCount": 8,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      }
+    ],
+    "year": 2017,
+    "path": "/data/tv/DARK",
+    "qualityProfileId": 4,
+    "languageProfileId": 2,
+    "seasonFolder": true,
+    "monitored": true,
+    "useSceneNumbering": false,
+    "runtime": 51,
+    "tvdbId": 334824,
+    "tvRageId": 0,
+    "tvMazeId": 17861,
+    "firstAired": "2017-12-01T00:00:00Z",
+    "seriesType": "standard",
+    "cleanTitle": "dark",
+    "imdbId": "tt5753856",
+    "titleSlug": "dark",
+    "rootFolderPath": "/data/tv/",
+    "certification": "TV-14",
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery",
+      "Science Fiction",
+      "Thriller"
+    ],
+    "tags": [
+      1
+    ],
+    "added": "2020-12-05T23:57:33.341194Z",
+    "ratings": {
+      "votes": 745,
+      "value": 9.0
+    },
+    "statistics": {
+      "seasonCount": 3,
+      "episodeFileCount": 0,
+      "episodeCount": 26,
+      "totalEpisodeCount": 26,
+      "sizeOnDisk": 0,
+      "percentOfEpisodes": 0.0
+    },
+    "id": 3
+  },
+  {
+    "title": "Fargo",
+    "alternateTitles": [],
+    "sortTitle": "fargo",
+    "status": "continuing",
+    "ended": false,
+    "overview": "Over the course of several decades, murder and mayhem is visited across the residents of small rural towns in the Midwest, proving that organized crime can infiltrate even the sleepiest areas of America.",
+    "network": "FX",
+    "airTime": "22:00",
+    "images": [
+      {
+        "coverType": "banner",
+        "url": "/MediaCover/4/banner.jpg?lastWrite=637428103676687060",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/graphical/269613-g3.jpg"
+      },
+      {
+        "coverType": "poster",
+        "url": "/MediaCover/4/poster.jpg?lastWrite=637428103678187050",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/posters/269613-3.jpg"
+      },
+      {
+        "coverType": "fanart",
+        "url": "/MediaCover/4/fanart.jpg?lastWrite=637428103679720380",
+        "remoteUrl": "https://artworks.thetvdb.com/banners/fanart/original/269613-2.jpg"
+      }
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 10,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 2,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 10,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 3,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 10,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      },
+      {
+        "seasonNumber": 4,
+        "monitored": false,
+        "statistics": {
+          "episodeFileCount": 0,
+          "episodeCount": 0,
+          "totalEpisodeCount": 11,
+          "sizeOnDisk": 0,
+          "percentOfEpisodes": 0.0
+        }
+      }
+    ],
+    "year": 2014,
+    "path": "/data/tv/Fargo",
+    "qualityProfileId": 3,
+    "languageProfileId": 1,
+    "seasonFolder": true,
+    "monitored": false,
+    "useSceneNumbering": false,
+    "runtime": 50,
+    "tvdbId": 269613,
+    "tvRageId": 35276,
+    "tvMazeId": 32,
+    "firstAired": "2014-04-15T00:00:00Z",
+    "seriesType": "standard",
+    "cleanTitle": "fargo",
+    "imdbId": "tt2802850",
+    "titleSlug": "fargo",
+    "rootFolderPath": "/data/tv/",
+    "certification": "TV-MA",
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "tags": [],
+    "added": "2020-12-06T00:12:46.856339Z",
+    "ratings": {
+      "votes": 3889,
+      "value": 9.1
+    },
+    "statistics": {
+      "seasonCount": 4,
+      "episodeFileCount": 0,
+      "episodeCount": 0,
+      "totalEpisodeCount": 41,
+      "sizeOnDisk": 0,
+      "percentOfEpisodes": 0.0
+    },
+    "id": 4
+  }
+]
