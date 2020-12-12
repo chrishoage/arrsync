@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8, 3.9]
+        python-version: ['3.8', '3.9']
 
     name: Python ${{ matrix.python-version }}
     steps:
@@ -37,3 +37,9 @@ jobs:
         run: mypy
       - name: Unit tests
         run: pytest --cov
+      # Only run Coveralls on the main branch and just a single python version
+      - name: Coveralls
+        if: success() && github.ref == 'refs/heads/main' && matrix.python-version == '3.9'
+        run: coveralls
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
