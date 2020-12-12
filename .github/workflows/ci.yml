@@ -1,6 +1,12 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '*'
 
 jobs:
   test:
@@ -21,8 +27,13 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt -r requirements-dev.txt
-      - run: isort --check --diff .
-      - run: black --check .
-      - run: flake8
-      - run: mypy
-      - run: pytest --cov
+      - name: Import sort
+        run: isort --check --diff .
+      - name: Code formatting
+        run: black --check .
+      - name: Linting
+        run: flake8
+      - name: Type checking
+        run: mypy
+      - name: Unit tests
+        run: pytest --cov
