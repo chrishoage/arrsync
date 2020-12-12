@@ -8,5 +8,6 @@ mypy
 pytest
 pytest-mock
 pytest-cov
+coveralls
 mock
 responses
