@@ -1,6 +1,6 @@
-# Arrsync
+# *arrsync
 
-Arrsync syncs takes a source Sonarr/Radarr/Lidarr server and syncs the items that
+Arrsync syncs a source Sonarr/Radarr/Lidarr server and adds the items that
 are missing on a destination Sonarr/Radarr/Lidarr server using the API.
 
 ## ⚠️ WARNING ⚠️
@@ -111,3 +111,33 @@ optional arguments:
 arrsync -c /etc/arrsync.conf
 
 ```
+
+### Installation
+
+Until a packaging solution has been selected the easiest way to install is using [pipx](https://pipxproject.github.io/pipx/installation/) and the git+https url
+
+```
+pipx install "git+https://github.com/chrishoage/arrsync.git@main" arrsync
+```
+
+However in order to update you will need to  uninstall then install
+
+
+### Development
+
+It is highly recommended you create a python virtual environment to use when developing
+
+```
+python -m venv .venv
+source .venv/bin/activate
+```
+
+You can install all dependencies and dev dependencies using pip
+
+```
+pip install -r requirements.txt -r requirements-dev.txt
+```
+
+Pull Requests are welcome, however make sure to run flake8, isort, and black before opening the PR
+
+Unit tests are something that will be required when adding or changing code.
