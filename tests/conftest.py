@@ -16,6 +16,7 @@ from arrsync.common import (
     SonarrSyncJob,
     SyncJob,
 )
+from arrsync.utils import _assert_never
 
 
 class CreateSyncJob(Protocol):
@@ -43,16 +44,17 @@ def create_sync_job(
             "dest_profile": "1",
         }
 
-        if job_type == JobType.Sonarr:
+        if job_type is JobType.Sonarr:
             return SonarrSyncJob.parse_obj({**base_attrs, **extra_attrs})
 
-        if job_type == JobType.Radarr:
+        elif job_type is JobType.Radarr:
             return RadarrSyncJob.parse_obj({**base_attrs, **extra_attrs})
 
-        if job_type == JobType.Lidarr:
+        elif job_type is JobType.Lidarr:
             return LidarrSyncJob.parse_obj({**base_attrs, **extra_attrs})
 
-        raise ValueError()
+        else:
+            _assert_never(job_type)
 
     return _create_sync_job
 
@@ -83,7 +85,7 @@ def create_content_item(
             "tags": [],
         }
 
-        if job_type == JobType.Radarr:
+        if job_type is JobType.Radarr:
             return RadarrContent.parse_obj(
                 {
                     "tmdb_id": count,
@@ -94,7 +96,7 @@ def create_content_item(
                 }
             )
 
-        elif job_type == JobType.Sonarr:
+        elif job_type is JobType.Sonarr:
             return SonarrContent.parse_obj(
                 {
                     "tvdb_id": count,
@@ -106,7 +108,7 @@ def create_content_item(
                 }
             )
 
-        elif job_type == JobType.Lidarr:
+        elif job_type is JobType.Lidarr:
             return LidarrContent.parse_obj(
                 {
                     "artist_name": f"Item {count}",
@@ -121,7 +123,8 @@ def create_content_item(
                 }
             )
 
-        raise ValueError()
+        else:
+            _assert_never(job_type)
 
     return _create_content_item
 
