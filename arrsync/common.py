@@ -102,7 +102,9 @@ class BaseContent(BaseModel):
     tags: List[int]
     quality_profile_id: int = Field(alias="qualityProfileId")
     root_folder_path: Optional[str] = Field(alias="rootFolderPath")
-    add_options: Optional[Dict[str, Union[bool, str]]] = Field(alias="addOptions")
+    add_options: Dict[str, Union[bool, str]] = Field(
+        alias="addOptions", default_factory=lambda: {}
+    )
 
     @property
     def _id_attr(self) -> Union[str, int]:
