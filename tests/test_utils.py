@@ -4,12 +4,15 @@ from contextlib import nullcontext as does_not_raise
 from typing import Any, Dict, Union
 
 import pytest
+from pytest_mock.plugin import MockerFixture
 from tests.conftest import CreateContentItem
 
 from arrsync.common import JobType, Profile, Tag
 from arrsync.utils import (
     find_ids_in_list,
     find_in_list,
+    find_in_list_with_fallback,
+    first_in_list,
     get_debug_title,
     get_search_missing_attribute,
 )
@@ -91,6 +94,33 @@ def test_find_job_tag(query: str, result: Dict[str, Any]) -> None:
     found_profile = find_in_list(profiles, query)
 
     assert result == found_profile
+
+
+def test_first_in_list() -> None:
+    profiles = [
+        Tag(label="Tag 1", id=1),
+        Tag(label="Tag 2", id=2),
+        Tag(label="Tag 3", id=3),
+        Tag(label="Tag 4", id=4),
+    ]
+
+    assert first_in_list(profiles) == profiles[0]
+
+
+def test_find_in_list_with_fallback(mocker: MockerFixture) -> None:
+    mock_warnring = mocker.patch("arrsync.utils.logger.warning")
+
+    profiles = [
+        Tag(label="Tag 1", id=1),
+        Tag(label="Tag 2", id=2),
+        Tag(label="Tag 3", id=3),
+        Tag(label="Tag 4", id=4),
+    ]
+
+    assert find_in_list_with_fallback(profiles, "3") == profiles[2]
+    assert find_in_list_with_fallback(profiles, "100", "tags") == profiles[0]
+    mock_warnring.assert_called_once()
+    assert find_in_list_with_fallback([], "0") is None
 
 
 @pytest.mark.parametrize(

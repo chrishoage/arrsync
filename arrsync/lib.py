@@ -18,7 +18,7 @@ from arrsync.common import (
 from arrsync.config import logger
 from arrsync.utils import (
     find_ids_in_list,
-    find_in_list,
+    find_in_list_with_fallback,
     get_debug_title,
     get_search_missing_attribute,
 )
@@ -26,7 +26,7 @@ from arrsync.utils import (
 pp = pprint.PrettyPrinter()
 
 
-def get_content_payloads(  # noqa: C901
+def get_content_payloads(
     job: SyncJob,
     content: ContentItems,
     dest_profiles: Profiles,
@@ -35,13 +35,12 @@ def get_content_payloads(  # noqa: C901
 ) -> ContentItems:
     payload_items: ContentItems = []
 
-    dest_profile = find_in_list(dest_profiles, job.dest_profile) or next(
-        iter(dest_profiles), None
+    dest_profile = find_in_list_with_fallback(
+        dest_profiles, job.dest_profile, "profiles"
     )
 
     if not dest_profile:
-        logger.error("unable to find '%s' profile", job.dest_profile)
-        raise Exception("failed to find dest profile")
+        raise Exception("A profile is required to be set an no profiles are available")
 
     for item in content:
         payload = item.copy(
@@ -53,9 +52,6 @@ def get_content_payloads(  # noqa: C901
             },
         )
 
-        if not payload.add_options:
-            payload.add_options = {}
-
         if job.dest_search_missing:
             search_missing_attribute = get_search_missing_attribute(job.type)
 
@@ -64,57 +60,23 @@ def get_content_payloads(  # noqa: C901
             )
 
         if isinstance(payload, SonarrContent) and job.type == JobType.Sonarr:
-            dest_language = (
-                find_in_list(
-                    dest_languages,
-                    job.dest_language_profile,
-                )
-                if job.dest_language_profile
-                else None
+            dest_language = find_in_list_with_fallback(
+                dest_languages, job.dest_language_profile, "languages"
             )
-
-            if not dest_language:
-                dest_language = next(iter(dest_languages), None)
-
-                if job.dest_language_profile and dest_language:  # pragma: no coverage
-                    logger.debug(
-                        "supplied '%s' language profile not found, defaulting to first one",
-                        job.dest_language_profile,
-                    )
 
             if dest_language:
                 payload.language_profile_id = dest_language.id
 
         if isinstance(payload, LidarrContent) and job.type == JobType.Lidarr:
-            dest_metadata_profile = (
-                find_in_list(
-                    dest_metadata_profiles,
-                    job.dest_metadata_profile,
-                )
-                if job.dest_metadata_profile
-                else None
+            dest_metadata_profile = find_in_list_with_fallback(
+                dest_metadata_profiles, job.dest_metadata_profile, "metadata profiles"
             )
-
-            if not dest_metadata_profile:
-                dest_metadata_profile = next(iter(dest_metadata_profiles), None)
-
-                if (
-                    job.dest_metadata_profile and dest_metadata_profile
-                ):  # pragma: no coverage
-                    logger.debug(
-                        "supplied '%s' metadata profile not found, defaulting to first one",
-                        job.dest_metadata_profile,
-                    )
 
             if dest_metadata_profile:
                 payload.metadata_profile_id = dest_metadata_profile.id
             else:
-                logger.error(
-                    "failed to find metadataProfileId for '%s'",
-                    get_debug_title(payload),
-                )
                 raise Exception(
-                    f"Could not find metadataProfileId for {get_debug_title(payload)}"
+                    "Lidarr requires a metadata profile to be set and no metadata profiles are available"
                 )
 
         payload_items.append(payload)
