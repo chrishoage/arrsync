@@ -126,7 +126,9 @@ def create_content_item(
     return _create_content_item
 
 
-@responses.activate
+# responses does not currently offer types so we intentionally bail out of
+# disallow-untyped-decorators here
+@responses.activate  # type: ignore[misc]
 @pytest.fixture(scope="function")
 def resp(request: FixtureRequest) -> Iterator[responses.RequestsMock]:
     with responses.RequestsMock() as resp:

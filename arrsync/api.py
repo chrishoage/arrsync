@@ -33,7 +33,7 @@ class Api(object):
 
     def __init__(
         self, job_type: JobType, url: str, api_key: str, headers: Dict[str, str] = {}
-    ) -> None:
+    ):
         self.session = Session()
         self.job_type = job_type
         self.url = self._normalize_url(url)
