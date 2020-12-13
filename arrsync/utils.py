@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 
-from typing import List, TypeVar, Union
+from typing import List, NoReturn, TypeVar, Union
 
 from arrsync.common import ContentItem, JobType, Language, LidarrContent, Profile, Tag
 
 T = TypeVar("T", Tag, Profile, Language)
+
+
+def _assert_never(x: NoReturn) -> NoReturn:
+    assert False, "Unhandled type: {}".format(type(x).__name__)
 
 
 def find_in_list(input_list: List[T], query: str) -> Union[T, None]:
@@ -45,11 +49,11 @@ def get_debug_title(item: ContentItem) -> str:
 
 
 def get_search_missing_attribute(job_type: JobType) -> str:
-    if job_type == JobType.Sonarr:
+    if job_type is JobType.Sonarr:
         return "searchForMissingEpisodes"
-    if job_type == JobType.Radarr:
+    if job_type is JobType.Radarr:
         return "searchForMovie"
-    if job_type == JobType.Lidarr:
+    if job_type is JobType.Lidarr:
         return "searchForMissingAlbums"
-
-    raise TypeError(f"{job_type} JobType is unhandled")
+    else:
+        _assert_never(job_type)

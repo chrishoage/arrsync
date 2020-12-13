@@ -26,6 +26,7 @@ from arrsync.lib import (
     start_sync_job,
     sync_content,
 )
+from arrsync.utils import _assert_never
 
 
 def item_in_list(items: ContentItems, search_item: ContentItem) -> bool:
@@ -502,12 +503,14 @@ def test_get_content_payloads_search_missing(
     assert payload
     assert payload.add_options
 
-    if job_type == JobType.Sonarr:
+    if job_type is JobType.Sonarr:
         assert payload.add_options["searchForMissingEpisodes"]
-    if job_type == JobType.Radarr:
+    elif job_type is JobType.Radarr:
         assert payload.add_options["searchForMovie"]
-    if job_type == JobType.Lidarr:
+    elif job_type is JobType.Lidarr:
         assert payload.add_options["searchForMissingAlbums"]
+    else:
+        _assert_never(job_type)
 
 
 def test_get_content_payloads_sonarr_languages(

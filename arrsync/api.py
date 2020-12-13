@@ -24,6 +24,7 @@ from arrsync.common import (
     Tags,
 )
 from arrsync.config import logger
+from arrsync.utils import _assert_never
 
 
 class Api(object):
@@ -108,14 +109,14 @@ class Api(object):
         full_url = routes.content(job_type=self.job_type, url=self.url)
         json = self.get(url=full_url)
 
-        if self.job_type == JobType.Sonarr:
+        if self.job_type is JobType.Sonarr:
             return list(map(SonarrContent.parse_obj, json))
-        if self.job_type == JobType.Radarr:
+        elif self.job_type is JobType.Radarr:
             return list(map(RadarrContent.parse_obj, json))
-        if self.job_type == JobType.Lidarr:
+        elif self.job_type is JobType.Lidarr:
             return list(map(LidarrContent.parse_obj, json))
-
-        raise TypeError(f"{self.job_type} JobType is unhandled")
+        else:
+            _assert_never(self.job_type)
 
     def save(self, content_item: ContentItem) -> Any:
         full_url = routes.content(job_type=self.job_type, url=self.url)
