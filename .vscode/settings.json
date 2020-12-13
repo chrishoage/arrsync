@@ -9,6 +9,9 @@
     }
   },
   "python.linting.mypyEnabled": true,
+  "python.linting.mypyArgs": [
+    "--strict"
+  ],
   "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
   "cSpell.ignoreWords": [

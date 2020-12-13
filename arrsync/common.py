@@ -105,7 +105,7 @@ class BaseContent(BaseModel):
     add_options: Optional[Dict[str, Union[bool, str]]] = Field(alias="addOptions")
 
     @property
-    def _id_attr(self) -> Any:
+    def _id_attr(self) -> Union[str, int]:
         raise NotImplementedError(f"{self.__repr_name__} did not implement _id_attr")
 
     def __hash__(self) -> int:

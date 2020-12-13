@@ -23,36 +23,32 @@ def test_base_item_equality() -> None:
 
 
 def test_sonarr_item_equality() -> None:
-    a = (
-        SonarrContent(
-            title="One",
-            title_slug="one",
-            tvdb_id=1,
-            images=[],
-            monitored=False,
-            use_scene_numbering=True,
-            season_folder=True,
-            seasons=[{"title": "Season 1", "attr": 10}],
-            quality_profile_id=10,
-            root_folder_path="/path",
-            tags=[],
-        ),
+    a = SonarrContent(
+        title="One",
+        title_slug="one",
+        tvdb_id=1,
+        images=[],
+        monitored=False,
+        use_scene_numbering=True,
+        season_folder=True,
+        seasons=[{"title": "Season 1", "attr": 10}],
+        quality_profile_id=10,
+        root_folder_path="/path",
+        tags=[],
     )
 
-    b = (
-        SonarrContent(
-            title="One",
-            title_slug="one",
-            tvdb_id=1,
-            images=[],
-            monitored=False,
-            use_scene_numbering=True,
-            season_folder=True,
-            seasons=[{"title": "Season 1", "attr": 10}],
-            quality_profile_id=10,
-            root_folder_path="/path",
-            tags=[],
-        ),
+    b = SonarrContent(
+        title="One",
+        title_slug="one",
+        tvdb_id=1,
+        images=[],
+        monitored=False,
+        use_scene_numbering=True,
+        season_folder=True,
+        seasons=[{"title": "Season 1", "attr": 10}],
+        quality_profile_id=10,
+        root_folder_path="/path",
+        tags=[],
     )
 
     assert a == b

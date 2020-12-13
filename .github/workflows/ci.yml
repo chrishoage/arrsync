@@ -34,7 +34,7 @@ jobs:
       - name: Linting
         run: flake8
       - name: Type checking
-        run: mypy
+        run: mypy --strict
       - name: Unit tests
         run: pytest --cov
       # Only run Coveralls on the main branch and just a single python version
