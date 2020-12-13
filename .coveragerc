@@ -1,7 +1,0 @@
-
-[run]
-source = arrsync
-
-[report]
-show_missing = true
-fail_under=100
