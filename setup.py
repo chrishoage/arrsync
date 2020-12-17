@@ -7,8 +7,8 @@ setup(
     version="0.1",
     description="A tool to sync Sonarr, Radarr, and Lidarr",
     install_requires=[
-        "requests",
-        "pydantic",
+        "requests>=2.22",
+        "pydantic>=1.2",
     ],
     packages=["arrsync"],
     python_requires=">=3.8",

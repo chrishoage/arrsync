@@ -90,8 +90,8 @@ SyncJob = Union[SonarrSyncJob, RadarrSyncJob, LidarrSyncJob]
 
 
 class ContentImage(BaseModel):
-    cover_type: str = Field(alias="coverType")
-    remote_url: str = Field(alias="remoteUrl")
+    cover_type: str = Field(..., alias="coverType")
+    remote_url: str = Field(..., alias="remoteUrl")
 
 
 class BaseContent(BaseModel):
@@ -100,11 +100,9 @@ class BaseContent(BaseModel):
 
     monitored: bool
     tags: List[int]
-    quality_profile_id: int = Field(alias="qualityProfileId")
-    root_folder_path: Optional[str] = Field(alias="rootFolderPath")
-    add_options: Dict[str, Union[bool, str]] = Field(
-        alias="addOptions", default_factory=lambda: {}
-    )
+    quality_profile_id: int = Field(..., alias="qualityProfileId")
+    root_folder_path: Optional[str] = Field(None, alias="rootFolderPath")
+    add_options: Dict[str, Union[bool, str]] = Field({}, alias="addOptions")
 
     @property
     def _id_attr(self) -> Union[str, int]:
@@ -122,13 +120,13 @@ class BaseContent(BaseModel):
 
 class SonarrContent(BaseContent):
     title: str
-    title_slug: str = Field(alias="titleSlug")
-    tvdb_id: int = Field(alias="tvdbId")
-    tv_maze_id: Optional[int] = Field(alias="tvMazeId")
-    tv_rage_id: Optional[int] = Field(alias="tvRageId")
-    use_scene_numbering: bool = Field(alias="useSceneNumbering")
-    season_folder: bool = Field(alias="seasonFolder")
-    language_profile_id: Optional[int] = Field(alias="languageProfileId")
+    title_slug: str = Field(..., alias="titleSlug")
+    tvdb_id: int = Field(..., alias="tvdbId")
+    tv_maze_id: Optional[int] = Field(None, alias="tvMazeId")
+    tv_rage_id: Optional[int] = Field(None, alias="tvRageId")
+    use_scene_numbering: bool = Field(..., alias="useSceneNumbering")
+    season_folder: bool = Field(..., alias="seasonFolder")
+    language_profile_id: Optional[int] = Field(None, alias="languageProfileId")
     images: List[Optional[ContentImage]]
     seasons: Any
 
@@ -139,11 +137,11 @@ class SonarrContent(BaseContent):
 
 class RadarrContent(BaseContent):
     title: str
-    title_slug: str = Field(alias="titleSlug")
-    tmdb_id: int = Field(alias="tmdbId")
-    imdb_id: Optional[str] = Field(alias="imdbId")
+    title_slug: str = Field(..., alias="titleSlug")
+    tmdb_id: int = Field(..., alias="tmdbId")
+    imdb_id: Optional[str] = Field(None, alias="imdbId")
     year: int
-    has_file: bool = Field(alias="hasFile")
+    has_file: bool = Field(..., alias="hasFile")
     images: List[Optional[ContentImage]]
 
     @property
@@ -152,14 +150,14 @@ class RadarrContent(BaseContent):
 
 
 class LidarrContentImage(BaseModel):
-    cover_type: str = Field(alias="coverType")
+    cover_type: str = Field(..., alias="coverType")
     url: str
 
 
 class LidarrContent(BaseContent):
-    artist_name: str = Field(alias="artistName")
-    foreign_artist_id: str = Field(alias="foreignArtistId")
-    metadata_profile_id: Optional[int] = Field(alias="metadataProfileId")
+    artist_name: str = Field(..., alias="artistName")
+    foreign_artist_id: str = Field(..., alias="foreignArtistId")
+    metadata_profile_id: Optional[int] = Field(None, alias="metadataProfileId")
     images: List[Optional[LidarrContentImage]]
     albums: Any
 
