@@ -2,9 +2,11 @@
 
 import argparse
 import configparser
+import logging
 
 import pytest
-from pydantic.error_wrappers import ValidationError
+from pydantic import ValidationError
+from pydantic_core import Url
 from pytest_mock import MockerFixture
 
 from arrsync import cli
@@ -18,7 +20,7 @@ def test_main(
     mocked_start_sync_job = mocker.patch("arrsync.cli.start_sync_job")
     mocked_get_sync_jobs = mocker.patch("arrsync.cli.get_sync_jobs")
 
-    job = RadarrSyncJob.parse_obj(
+    job = RadarrSyncJob.model_validate(
         dict(
             name="sync",
             type=JobType.Radarr,
@@ -46,11 +48,11 @@ def test_main(
 
 def test_main_fail(
     mocker: MockerFixture,
+    caplog: pytest.LogCaptureFixture,
 ) -> None:
-    mocked_logger = mocker.patch("arrsync.config.logger")
     mocked_start_sync_job = mocker.patch("arrsync.cli.start_sync_job")
     mocked_get_sync_jobs = mocker.patch("arrsync.cli.get_sync_jobs")
-    job = RadarrSyncJob.parse_obj(
+    job = RadarrSyncJob.model_validate(
         dict(
             name="sync",
             type=JobType.Radarr,
@@ -73,9 +75,10 @@ def test_main_fail(
 
     config = configparser.ConfigParser()
 
-    cli.main(config)
+    with caplog.at_level(logging.ERROR):
+        cli.main(config)
 
-    mocked_logger.error.called_with("sync: error")
+    assert "sync: error" in caplog.text
 
 
 def test_get_sync_jobs() -> None:
@@ -123,12 +126,12 @@ dest_profile = Any
 
     jobs = cli.get_sync_jobs(config_parser)
 
-    assert jobs[0].dict() == {
+    assert jobs[0].model_dump() == {
         "name": "radarr-remote-to-local",
         "type": JobType.Radarr,
-        "source_url": "http://localhost:7878/",
+        "source_url": Url("http://localhost:7878/"),
         "source_key": "aaa",
-        "dest_url": "http://localhost:7879/radarr",
+        "dest_url": Url("http://localhost:7879/radarr"),
         "dest_key": "bbb",
         "dest_path": "/movies",
         "source_include_missing": True,

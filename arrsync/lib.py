@@ -43,7 +43,7 @@ def get_content_payloads(
         raise Exception("A profile is required to be set an no profiles are available")
 
     for item in content:
-        payload = item.copy(
+        payload = item.model_copy(
             deep=True,
             update={
                 "quality_profile_id": dest_profile.id,
@@ -185,12 +185,12 @@ def start_sync_job(job: SyncJob, dry_run: bool = False) -> None:
 
     with Api(
         job_type=job.type,
-        url=job.source_url,
+        url=str(job.source_url),
         api_key=job.source_key,
         headers=job.source_headers,
     ) as source_api, Api(
         job_type=job.type,
-        url=job.dest_url,
+        url=str(job.dest_url),
         api_key=job.dest_key,
         headers=job.dest_headers,
     ) as dest_api:

@@ -3,7 +3,7 @@
 from configparser import ConfigParser
 from typing import List
 
-from pydantic.error_wrappers import ValidationError
+from pydantic import ValidationError
 
 from arrsync.common import JobType, LidarrSyncJob, RadarrSyncJob, SonarrSyncJob, SyncJob
 from arrsync.config import logger
@@ -33,11 +33,11 @@ def get_sync_jobs(config: ConfigParser) -> List[SyncJob]:
             job_type = JobType(job_opts["type"])
 
             if job_type == JobType.Sonarr:
-                sync_jobs.append(SonarrSyncJob.parse_obj(job_opts))
+                sync_jobs.append(SonarrSyncJob.model_validate(job_opts))
             elif job_type == JobType.Radarr:
-                sync_jobs.append(RadarrSyncJob.parse_obj(job_opts))
+                sync_jobs.append(RadarrSyncJob.model_validate(job_opts))
             elif job_type == JobType.Lidarr:
-                sync_jobs.append(LidarrSyncJob.parse_obj(job_opts))
+                sync_jobs.append(LidarrSyncJob.model_validate(job_opts))
 
         except ValidationError as e:
             logger.error("%s: config error", section_name)
