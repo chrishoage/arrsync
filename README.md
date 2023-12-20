@@ -1,4 +1,4 @@
-![Coveralls github](https://img.shields.io/coveralls/github/chrishoage/arrsync) ![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/chrishoage/arrsync/ci.yaml?branch=main) ![GitHub](https://img.shields.io/github/license/chrishoage/arrsync) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![Coveralls github](https://img.shields.io/coveralls/github/chrishoage/arrsync) ![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/chrishoage/arrsync/ci.yml?branch=main) ![GitHub](https://img.shields.io/github/license/chrishoage/arrsync) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # *arrsync
 
