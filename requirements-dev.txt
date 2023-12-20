@@ -11,3 +11,5 @@ pytest-cov
 coveralls
 mock
 responses
+types-requests
+types-mock
