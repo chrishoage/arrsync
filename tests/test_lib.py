@@ -621,7 +621,7 @@ def test_sync_content(
 
     with Api(job_type=job_type, url="http://host", api_key="aaa") as api:
         dest_api = mocker.patch.object(target=api, attribute="save")
-        dest_api.save.return_value = content[0].dict()
+        dest_api.save.return_value = content[0].model_dump()
 
         sync_content(content=content, dest_api=dest_api)
 
@@ -645,7 +645,7 @@ def test_sync_content_dry_run(
 
     with Api(job_type=job_type, url="http://host", api_key="aaa") as api:
         dest_api = mocker.patch.object(target=api, attribute="save")
-        dest_api.save.return_value = content[0].dict()
+        dest_api.save.return_value = content[0].model_dump()
 
         sync_content(content=content, dest_api=dest_api, dry_run=True)
 
@@ -666,11 +666,11 @@ def test_start_sync_job(
 
     source_api = MagicMock(spec=Api)
     source_api.__enter__.return_value = source_api
-    source_api.status.return_value = Status.parse_obj({"version": "3"})
+    source_api.status.return_value = Status.model_validate({"version": "3"})
 
     dest_api = MagicMock(spec=Api)
     dest_api.__enter__.return_value = dest_api
-    dest_api.status.return_value = Status.parse_obj({"version": "3"})
+    dest_api.status.return_value = Status.model_validate({"version": "3"})
 
     mock_api = mocker.patch(
         "arrsync.lib.Api", autospec=True, side_effect=[source_api, dest_api]

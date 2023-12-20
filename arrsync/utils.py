@@ -13,13 +13,13 @@ def _assert_never(x: NoReturn) -> NoReturn:
 
 
 def first_in_list(input_list: List[T]) -> Union[T, None]:
-    """ return the first item in input_list """
+    """return the first item in input_list"""
 
     return next(iter(input_list), None)
 
 
 def find_in_list(input_list: List[T], query: str) -> Union[T, None]:
-    """ Find an item in the input_list using query returning None if nothing is found """
+    """Find an item in the input_list using query returning None if nothing is found"""
 
     return next(
         (
@@ -34,7 +34,7 @@ def find_in_list(input_list: List[T], query: str) -> Union[T, None]:
 def find_in_list_with_fallback(
     input_list: List[T], query: Optional[str], list_name: str = "list"
 ) -> Union[T, None]:
-    """ Find the item in the input list using query. If none is found fall back to the first item in the list"""
+    """Find the item in the input list using query. If none is found fall back to the first item in the list"""
 
     item = find_in_list(input_list, query) if query else None
 
@@ -50,7 +50,7 @@ def find_in_list_with_fallback(
 def find_ids_in_list(
     input_list: Union[List[Tag], List[Profile], List[Language]], opt_list: List[str]
 ) -> List[str]:
-    """ Return the ids from the input_list using the opt_list """
+    """Return the ids from the input_list using the opt_list"""
 
     normalized_list = list(map(lambda i: i.lower(), opt_list))
     return list(

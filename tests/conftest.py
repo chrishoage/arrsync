@@ -32,7 +32,6 @@ def create_sync_job(
         job_type: JobType,
         **extra_attrs: Any,
     ) -> SyncJob:
-
         base_attrs = {
             "name": "sync",
             "type": job_type,
@@ -45,13 +44,13 @@ def create_sync_job(
         }
 
         if job_type is JobType.Sonarr:
-            return SonarrSyncJob.parse_obj({**base_attrs, **extra_attrs})
+            return SonarrSyncJob.model_validate({**base_attrs, **extra_attrs})
 
         elif job_type is JobType.Radarr:
-            return RadarrSyncJob.parse_obj({**base_attrs, **extra_attrs})
+            return RadarrSyncJob.model_validate({**base_attrs, **extra_attrs})
 
         elif job_type is JobType.Lidarr:
-            return LidarrSyncJob.parse_obj({**base_attrs, **extra_attrs})
+            return LidarrSyncJob.model_validate({**base_attrs, **extra_attrs})
 
         else:
             _assert_never(job_type)
@@ -86,7 +85,7 @@ def create_content_item(
         }
 
         if job_type is JobType.Radarr:
-            return RadarrContent.parse_obj(
+            return RadarrContent.model_validate(
                 {
                     "tmdb_id": count,
                     "year": 2016,
@@ -97,7 +96,7 @@ def create_content_item(
             )
 
         elif job_type is JobType.Sonarr:
-            return SonarrContent.parse_obj(
+            return SonarrContent.model_validate(
                 {
                     "tvdb_id": count,
                     "use_scene_numbering": True,
@@ -109,7 +108,7 @@ def create_content_item(
             )
 
         elif job_type is JobType.Lidarr:
-            return LidarrContent.parse_obj(
+            return LidarrContent.model_validate(
                 {
                     "artist_name": f"Item {count}",
                     "foreign_artist_id": f"{count}",
@@ -131,7 +130,7 @@ def create_content_item(
 
 # responses does not currently offer types so we intentionally bail out of
 # disallow-untyped-decorators here
-@responses.activate  # type: ignore[misc]
+@responses.activate
 @pytest.fixture(scope="function")
 def resp(request: FixtureRequest) -> Iterator[responses.RequestsMock]:
     with responses.RequestsMock() as resp:

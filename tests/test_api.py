@@ -121,7 +121,7 @@ def test_api_post_success(resp: RequestsMock, api: Api, json_dict: Any) -> None:
         responses.POST,
         url=url,
         json=json_dict,
-        match=[responses.json_params_matcher(json_dict)],
+        match=[responses.matchers.json_params_matcher(json_dict)],
         status=200,
     )
 
@@ -142,7 +142,6 @@ def test_api_post_success(resp: RequestsMock, api: Api, json_dict: Any) -> None:
 def test_api_post_fail(
     resp: RequestsMock, api: Api, body: Any, status: Any, expectation: Any
 ) -> None:
-
     resp.add(responses.POST, url=api.url, body=body, status=status)
 
     with expectation:
@@ -231,7 +230,6 @@ def test_metadata_profile(resp: RequestsMock) -> None:
         assert len(api.metadata()) == 0
 
     with Api(job_type=JobType.Lidarr, url="http://host/", api_key="aaa") as api:
-
         full_url = routes.metadata(api.job_type, api.url)
 
         resp.add(
@@ -270,7 +268,6 @@ def test_language(resp: RequestsMock) -> None:
         assert len(api.language()) == 0
 
     with Api(job_type=JobType.Sonarr, url="http://host/", api_key="aaa") as api:
-
         full_url = routes.language(api.job_type, api.url)
 
         resp.add(
@@ -479,8 +476,10 @@ def test_save_content(
         resp.add(
             responses.POST,
             url=full_url,
-            json=item.dict(),
-            match=[responses.json_params_matcher(item.dict(by_alias=True))],
+            json=item.model_dump(),
+            match=[
+                responses.matchers.json_params_matcher(item.model_dump(by_alias=True))
+            ],
             status=200,
         )
         api.save(item)

@@ -75,17 +75,17 @@ class Api(object):
     def status(self) -> Status:
         full_url = routes.status(job_type=self.job_type, url=self.url)
         json = self.get(url=full_url)
-        return Status.parse_obj(json)
+        return Status.model_validate(json)
 
     def profile(self) -> Profiles:
         full_url = routes.profile(job_type=self.job_type, url=self.url)
         json = self.get(url=full_url)
-        return list(map(Profile.parse_obj, json))
+        return list(map(Profile.model_validate, json))
 
     def tag(self) -> Tags:
         full_url = routes.tag(job_type=self.job_type, url=self.url)
         json = self.get(url=full_url)
-        return list(map(Tag.parse_obj, json))
+        return list(map(Tag.model_validate, json))
 
     def language(self) -> Languages:
         # Only Sonarr supports setting languageProfileId
@@ -94,7 +94,7 @@ class Api(object):
 
         full_url = routes.language(job_type=self.job_type, url=self.url)
         json = self.get(url=full_url)
-        return list(map(Language.parse_obj, json))
+        return list(map(Language.model_validate, json))
 
     def metadata(self) -> Profiles:
         # Only Lidarr supports setting metadataProfileId
@@ -103,21 +103,21 @@ class Api(object):
 
         full_url = routes.metadata(job_type=self.job_type, url=self.url)
         json = self.get(url=full_url)
-        return list(map(Profile.parse_obj, json))
+        return list(map(Profile.model_validate, json))
 
     def content(self) -> ContentItems:
         full_url = routes.content(job_type=self.job_type, url=self.url)
         json = self.get(url=full_url)
 
         if self.job_type is JobType.Sonarr:
-            return list(map(SonarrContent.parse_obj, json))
+            return list(map(SonarrContent.model_validate, json))
         elif self.job_type is JobType.Radarr:
-            return list(map(RadarrContent.parse_obj, json))
+            return list(map(RadarrContent.model_validate, json))
         elif self.job_type is JobType.Lidarr:
-            return list(map(LidarrContent.parse_obj, json))
+            return list(map(LidarrContent.model_validate, json))
         else:
             _assert_never(self.job_type)
 
     def save(self, content_item: ContentItem) -> Any:
         full_url = routes.content(job_type=self.job_type, url=self.url)
-        return self.post(url=full_url, json=content_item.dict(by_alias=True))
+        return self.post(url=full_url, json=content_item.model_dump(by_alias=True))

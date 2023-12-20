@@ -53,10 +53,10 @@ def test_find_job_profiles() -> None:
 @pytest.mark.parametrize(
     "query,result",
     [
-        ("1", {"name": "Profile 1", "id": 1}),
-        ("profile 4", {"name": "Profile 4", "id": 4}),
-        ("PROFILE 3", {"name": "Profile 3", "id": 3}),
-        ("Profile 2", {"name": "Profile 2", "id": 2}),
+        ("1", Profile.model_validate({"name": "Profile 1", "id": 1})),
+        ("profile 4", Profile.model_validate({"name": "Profile 4", "id": 4})),
+        ("PROFILE 3", Profile.model_validate({"name": "Profile 3", "id": 3})),
+        ("Profile 2", Profile.model_validate({"name": "Profile 2", "id": 2})),
         ("nope", None),
     ],
 )
@@ -76,10 +76,10 @@ def test_find_job_profile(query: str, result: Dict[str, Any]) -> None:
 @pytest.mark.parametrize(
     "query,result",
     [
-        ("1", {"label": "Tag 1", "id": 1}),
-        ("tag 4", {"label": "Tag 4", "id": 4}),
-        ("TAG 3", {"label": "Tag 3", "id": 3}),
-        ("Tag 2", {"label": "Tag 2", "id": 2}),
+        ("1", Tag.model_validate({"label": "Tag 1", "id": 1})),
+        ("tag 4", Tag.model_validate({"label": "Tag 4", "id": 4})),
+        ("TAG 3", Tag.model_validate({"label": "Tag 3", "id": 3})),
+        ("Tag 2", Tag.model_validate({"label": "Tag 2", "id": 2})),
         ("nope", None),
     ],
 )

@@ -21,7 +21,6 @@ def create_config_parser() -> configparser.ConfigParser:
 
 
 def parse_args(args: Optional[Any] = None) -> argparse.Namespace:
-
     arg_parser = argparse.ArgumentParser(
         prog="arrsync",
         description="Sync missing content between Sonarr, Radarr, and Lidarr instances",

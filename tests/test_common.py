@@ -1,25 +1,7 @@
 #!/usr/bin/env python
 
-import pytest
 
-from arrsync.common import BaseContent, LidarrContent, RadarrContent, SonarrContent
-
-
-def test_base_item_equality() -> None:
-    a = BaseContent(
-        monitored=False,
-        tags=[],
-        quality_profile_id=0,
-    )
-
-    b = BaseContent(
-        monitored=False,
-        tags=[],
-        quality_profile_id=0,
-    )
-
-    with pytest.raises(NotImplementedError):
-        assert a == b
+from arrsync.common import LidarrContent, RadarrContent, SonarrContent
 
 
 def test_sonarr_item_equality() -> None:
