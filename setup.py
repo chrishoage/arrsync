@@ -4,7 +4,7 @@ from distutils.core import setup
 
 setup(
     name="arrsync",
-    version="0.1",
+    version="0.2",
     description="A tool to sync Sonarr, Radarr, and Lidarr",
     install_requires=[
         "requests>=2.22",
