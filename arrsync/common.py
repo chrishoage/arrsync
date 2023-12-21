@@ -100,14 +100,12 @@ class BaseContent(BaseModel):
     monitored: bool
     tags: List[int]
     quality_profile_id: Annotated[int, Field(..., alias="qualityProfileId")]
-    root_folder_path: Optional[
-        Annotated[str, Field(None, alias="rootFolderPath")]
+    root_folder_path: Annotated[
+        Optional[str], Field(None, alias="rootFolderPath")
     ] = None
-    add_options: Optional[
-        Annotated[
-            Dict[str, Union[bool, str]],
-            Field({}, alias="addOptions"),
-        ]
+    add_options: Annotated[
+        Dict[str, Union[bool, str]],
+        Field({}, alias="addOptions"),
     ] = {}
 
     @property
@@ -129,12 +127,12 @@ class SonarrContent(BaseContent):
     title: str
     title_slug: Annotated[str, Field(..., alias="titleSlug")]
     tvdb_id: Annotated[int, Field(..., alias="tvdbId")]
-    tv_maze_id: Optional[Annotated[int, Field(None, alias="tvMazeId")]] = None
-    tv_rage_id: Optional[Annotated[int, Field(None, alias="tvRageId")]] = None
+    tv_maze_id: Annotated[Optional[int], Field(None, alias="tvMazeId")] = None
+    tv_rage_id: Annotated[Optional[int], Field(None, alias="tvRageId")] = None
     use_scene_numbering: Annotated[bool, Field(..., alias="useSceneNumbering")]
     season_folder: Annotated[bool, Field(..., alias="seasonFolder")]
-    language_profile_id: Optional[
-        Annotated[int, Field(None, alias="languageProfileId")]
+    language_profile_id: Annotated[
+        Optional[int], Field(None, alias="languageProfileId")
     ] = None
     images: List[Optional[ContentImage]]
     seasons: Any
@@ -148,7 +146,7 @@ class RadarrContent(BaseContent):
     title: str
     title_slug: Annotated[str, Field(..., alias="titleSlug")]
     tmdb_id: Annotated[int, Field(..., alias="tmdbId")]
-    imdb_id: Optional[Annotated[str, Field(None, alias="imdbId")]] = None
+    imdb_id: Annotated[Optional[str], Field(None, alias="imdbId")] = None
     year: int
     has_file: Annotated[bool, Field(..., alias="hasFile")]
     images: List[Optional[ContentImage]]
@@ -166,8 +164,8 @@ class LidarrContentImage(BaseModel):
 class LidarrContent(BaseContent):
     artist_name: Annotated[str, Field(..., alias="artistName")]
     foreign_artist_id: Annotated[str, Field(..., alias="foreignArtistId")]
-    metadata_profile_id: Optional[
-        Annotated[int, Field(None, alias="metadataProfileId")]
+    metadata_profile_id: Annotated[
+        Optional[int], Field(None, alias="metadataProfileId")
     ] = None
     images: List[Optional[LidarrContentImage]]
     albums: Any = None
