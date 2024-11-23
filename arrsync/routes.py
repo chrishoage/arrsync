@@ -6,6 +6,17 @@ from arrsync.common import JobType
 from arrsync.utils import _assert_never
 
 
+def initialize(job_type: JobType, url: str) -> str:
+    if job_type is JobType.Sonarr:
+        return parse.urljoin(url, "initialize.json")
+    if job_type is JobType.Radarr:
+        return parse.urljoin(url, "initialize.json")
+    if job_type is JobType.Lidarr:
+        return parse.urljoin(url, "initialize.json")
+    else:
+        _assert_never(job_type)
+
+
 def status(job_type: JobType, url: str) -> str:
     if job_type is JobType.Sonarr:
         return parse.urljoin(url, "api/v3/system/status")

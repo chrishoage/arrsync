@@ -5,8 +5,7 @@ import configparser
 import logging
 
 import pytest
-from pydantic import ValidationError
-from pydantic_core import Url
+from pydantic import AnyHttpUrl, ValidationError
 from pytest_mock import MockerFixture
 
 from arrsync import cli
@@ -129,9 +128,9 @@ dest_profile = Any
     assert jobs[0].model_dump() == {
         "name": "radarr-remote-to-local",
         "type": JobType.Radarr,
-        "source_url": Url("http://localhost:7878/"),
+        "source_url": AnyHttpUrl("http://localhost:7878/"),
         "source_key": "aaa",
-        "dest_url": Url("http://localhost:7879/radarr"),
+        "dest_url": AnyHttpUrl("http://localhost:7879/radarr"),
         "dest_key": "bbb",
         "dest_path": "/movies",
         "source_include_missing": True,
@@ -198,3 +197,41 @@ source_include_missing = 1
 
     with pytest.raises(ValidationError):
         cli.get_sync_jobs(config_parser)
+
+
+def test_get_sync_jobs_allow_missing_key() -> None:
+    test_config = """
+[radarr-remote-to-local]
+type=radarr
+source_url=http://host/
+dest_url=http://host2/
+dest_path=/path
+dest_profile=1
+source_include_missing = 0
+"""
+
+    config_parser = create_config_parser()
+
+    config_parser.read_string(test_config)
+
+    jobs = cli.get_sync_jobs(config_parser)
+
+    assert jobs[0].model_dump() == {
+        "name": "radarr-remote-to-local",
+        "type": JobType.Radarr,
+        "source_url": AnyHttpUrl("http://host/"),
+        "source_key": "",
+        "dest_url": AnyHttpUrl("http://host2/"),
+        "dest_key": "",
+        "dest_path": "/path",
+        "source_include_missing": False,
+        "dest_search_missing": False,
+        "dest_monitor": False,
+        "source_headers": {},
+        "dest_headers": {},
+        "source_tag_include": [],
+        "source_tag_exclude": [],
+        "source_profile_exclude": [],
+        "source_profile_include": [],
+        "dest_profile": "1",
+    }

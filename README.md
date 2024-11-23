@@ -1,6 +1,6 @@
 ![Coveralls github](https://img.shields.io/coveralls/github/chrishoage/arrsync) ![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/chrishoage/arrsync/ci.yml?branch=main) ![GitHub](https://img.shields.io/github/license/chrishoage/arrsync) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-# *arrsync
+# \*arrsync
 
 Arrsync syncs a source Sonarr/Radarr/Lidarr server and adds the items that
 are missing on a destination Sonarr/Radarr/Lidarr server using the API.
@@ -27,15 +27,14 @@ This project is currently under active development, and the config structure and
 - Fully unit tested
 - Written with modern Python with strict type checking
 
-
 ## Documentation
 
 - `type` One of: `sonarr | radarr | lidarr`
 - `source_url` **Required** The instance you wish to sync _from_
-- `source_key` **Required**  The API key of the source instance
+- `source_key` **Required** The API key of the source instance
 - `source_headers` Extra headers you may wish to send to the source instance.
-- `dest_url` **Required**  The instance you wish to sync _to_
-- `dest_key` **Required**  The API key of the destination instance
+- `dest_url` **Required** The instance you wish to sync _to_
+- `dest_key` **Required** The API key of the destination instance
 - `dest_headers` Extra headers you may wish to send to the destination instance.
 - `dest_path` **Required** The root path of the destination instance. e.g. `/data` or `/home/USER/media`
 - `dest_search_missing` Immediately start searching after syncing to destination
@@ -46,15 +45,13 @@ This project is currently under active development, and the config structure and
 - `source_profile_exclude` A comma separated list of profiles on the source instance to include. This may be the `id` of the profile, or the label of the profile. e.g. `42` or `My Tag`. Items on the source that do not match will not be synced to the destination.
 - `source_include_missing` **Radarr Only** include "missing" files in Radarr during the sync (defaults to off)
 - `dest_language_profile` **Sonarr Only** the language profile you wish to set the items synced to the destination. May be either the language profile `id` or the `name`. e.g. `42` or `English`
-- `dest_metadata_profile` **Lidarr Only** the metadata profile you wish to set the items synced to the destination. May be  either the metadata profile `id` or the `name`. e.g. `42` or `Standard`
-
+- `dest_metadata_profile` **Lidarr Only** the metadata profile you wish to set the items synced to the destination. May be either the metadata profile `id` or the `name`. e.g. `42` or `Standard`
 
 #### Example config
 
 Each section name is a label for the job. You may specify any number of jobs you wish. You could specify `radarr-remote-to-local` then after `radarr-local-to-remote` with different settings to achieve bidirectional sync. The section headers are just labels, but if you name sections identically the last one in the config will override any that come before it.
 
 The `[common]` section will apply to _all_ sections. This is useful if there is shared configuration between them
-
 
 ```
 [radarr-remote-to-local]
@@ -108,7 +105,6 @@ optional arguments:
   --dry-run             Do not sync anything
 ```
 
-
 ```
 arrsync -c /etc/arrsync.conf
 
@@ -122,8 +118,13 @@ Until a packaging solution has been selected the easiest way to install is using
 pipx install "git+https://github.com/chrishoage/arrsync.git@main" arrsync
 ```
 
-However in order to update you will need to  uninstall then install
+However in order to update you will need to uninstall then install
 
+### Docker
+
+```
+docker run -v "./config.conf:/config/config.conf" --rm -it ghcr.io/chrishoage/arrsync
+```
 
 ### Development
 

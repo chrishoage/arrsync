@@ -148,17 +148,25 @@ def test_api_post_fail(
         api.post(api.url, {})
 
 
-common_params = (
-    "url,job_type",
-    [
-        ("http://host/route", JobType.Sonarr),
-        ("http://host/route", JobType.Radarr),
-        ("http://host/route", JobType.Lidarr),
-        ("http://host/", JobType.Sonarr),
-        ("http://host/", JobType.Radarr),
-        ("http://host/", JobType.Lidarr),
-    ],
-)
+def test_api_initialize(resp: RequestsMock) -> None:
+    full_url = routes.initialize(JobType.Sonarr, "http://host/")
+
+    resp.add(
+        responses.GET,
+        url=full_url,
+        json={"apiRoot": "/api/v3", "apiKey": "aaa", "urlBase": "/"},
+    )
+
+    with Api(
+        job_type=JobType.Sonarr, url="http://host/", api_key="", headers={}
+    ) as api:
+
+        assert api.session.headers.get("X-Api-Key") == "aaa"
+
+        resp.replace(responses.GET, url=full_url, json={})
+
+        with pytest.raises(ValidationError):
+            api.initialize()
 
 
 def test_status(api: Api, resp: RequestsMock) -> None:

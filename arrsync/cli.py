@@ -9,14 +9,6 @@ from arrsync.common import JobType, LidarrSyncJob, RadarrSyncJob, SonarrSyncJob,
 from arrsync.config import logger
 from arrsync.lib import start_sync_job
 
-required_options = {
-    "type",
-    "source_url",
-    "source_key",
-    "dest_url",
-    "dest_key",
-}
-
 
 def get_sync_jobs(config: ConfigParser) -> List[SyncJob]:
     sync_jobs: List[SyncJob] = []
