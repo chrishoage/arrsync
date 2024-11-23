@@ -11,7 +11,7 @@ setup(
         "pydantic>=2.5",
     ],
     packages=["arrsync"],
-    python_requires=">=3.8",
+    python_requires=">=3.10",
     entry_points={
         "console_scripts": ["arrsync=arrsync.__main__:main"],
     },

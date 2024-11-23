@@ -20,8 +20,7 @@ from arrsync.utils import _assert_never
 
 
 class CreateSyncJob(Protocol):
-    def __call__(self, job_type: JobType, **extra_attrs: Any) -> SyncJob:
-        ...
+    def __call__(self, job_type: JobType, **extra_attrs: Any) -> SyncJob: ...
 
 
 @pytest.fixture(scope="function")
@@ -59,8 +58,7 @@ def create_sync_job(
 
 
 class CreateContentItem(Protocol):
-    def __call__(self, job_type: JobType, **extra_attrs: Any) -> ContentItem:
-        ...
+    def __call__(self, job_type: JobType, **extra_attrs: Any) -> ContentItem: ...
 
 
 @pytest.fixture(scope="function")

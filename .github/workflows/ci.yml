@@ -6,14 +6,14 @@ on:
       - main
   pull_request:
     branches:
-      - '*'
+      - "*"
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.8', '3.9']
+        python-version: ["3.10", "3.12"]
 
     name: Python ${{ matrix.python-version }}
     steps:
@@ -39,7 +39,28 @@ jobs:
         run: pytest --cov
       # Only run Coveralls on the main branch and just a single python version
       - name: Coveralls
-        if: success() && github.ref == 'refs/heads/main' && matrix.python-version == '3.9'
+        if: success() && github.ref == 'refs/heads/main' && matrix.python-version == '3.12'
         run: coveralls
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  docker:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository }}:latest

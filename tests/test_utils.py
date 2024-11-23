@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from contextlib import nullcontext as does_not_raise
-from typing import Any, Dict, Union
+from typing import Any, Union
 
 import pytest
 from pytest_mock.plugin import MockerFixture
@@ -60,7 +60,7 @@ def test_find_job_profiles() -> None:
         ("nope", None),
     ],
 )
-def test_find_job_profile(query: str, result: Dict[str, Any]) -> None:
+def test_find_job_profile(query: str, result: Profile | None) -> None:
     profiles = [
         Profile(name="Profile 1", id=1),
         Profile(name="Profile 2", id=2),
@@ -83,7 +83,7 @@ def test_find_job_profile(query: str, result: Dict[str, Any]) -> None:
         ("nope", None),
     ],
 )
-def test_find_job_tag(query: str, result: Dict[str, Any]) -> None:
+def test_find_job_tag(query: str, result: Tag | None) -> None:
     profiles = [
         Tag(label="Tag 1", id=1),
         Tag(label="Tag 2", id=2),

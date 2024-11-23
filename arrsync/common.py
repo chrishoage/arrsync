@@ -24,14 +24,14 @@ class BaseSyncJob(BaseModel):
     name: str
     type: JobType
     source_url: AnyHttpUrl
-    source_key: str
+    source_key: str = ""
     source_headers: Headers = {}
     source_tag_exclude: TagList = []
     source_tag_include: TagList = []
     source_profile_include: ProfileList = []
     source_profile_exclude: ProfileList = []
     dest_url: AnyHttpUrl
-    dest_key: str
+    dest_key: str = ""
     dest_headers: Headers = {}
     dest_path: str
     dest_profile: str
@@ -100,9 +100,9 @@ class BaseContent(BaseModel):
     monitored: bool
     tags: List[int]
     quality_profile_id: Annotated[int, Field(..., alias="qualityProfileId")]
-    root_folder_path: Annotated[
-        Optional[str], Field(None, alias="rootFolderPath")
-    ] = None
+    root_folder_path: Annotated[Optional[str], Field(None, alias="rootFolderPath")] = (
+        None
+    )
     add_options: Annotated[
         Dict[str, Union[bool, str]],
         Field({}, alias="addOptions"),
@@ -177,6 +177,12 @@ class LidarrContent(BaseContent):
 
 ContentItem = Union[SonarrContent, RadarrContent, LidarrContent]
 ContentItems = List[ContentItem]
+
+
+class Initialize(BaseModel):
+    api_root: Annotated[str, Field(..., alias="apiRoot")]
+    api_key: Annotated[str, Field(..., alias="apiKey")]
+    url_base: Annotated[str, Field(..., alias="urlBase")]
 
 
 class Status(BaseModel):

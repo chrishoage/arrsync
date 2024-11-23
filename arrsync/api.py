@@ -11,6 +11,7 @@ from arrsync import routes
 from arrsync.common import (
     ContentItem,
     ContentItems,
+    Initialize,
     JobType,
     Language,
     Languages,
@@ -39,6 +40,9 @@ class Api(object):
         self.job_type = job_type
         self.url = self._normalize_url(url)
 
+        if api_key == "":
+            init = self.initialize()
+            api_key = init.api_key
         self.session.headers.update({"X-Api-Key": api_key, **headers})
 
     def __enter__(self) -> Api:
@@ -71,6 +75,11 @@ class Api(object):
     def post(self, url: str, json: Dict[Any, Any]) -> Any:
         response = self.session.post(url=url, json=json)
         return self._response_json(response=response, url=url)
+
+    def initialize(self) -> Initialize:
+        full_url = routes.initialize(job_type=self.job_type, url=self.url)
+        json = self.get(url=full_url)
+        return Initialize.model_validate(json)
 
     def status(self) -> Status:
         full_url = routes.status(job_type=self.job_type, url=self.url)
